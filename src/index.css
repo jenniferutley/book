@@ -13,3 +13,11 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.author-span {
+  display: block;
+}
+
+.category-span {
+  display: block;
+}

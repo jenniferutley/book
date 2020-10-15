@@ -15,12 +15,12 @@ export default function Search() {
     axios.get("https://www.googleapis.com/books/v1/volumes?q=" + searchTerm)
       .then(res => {
         setBooks(res.data.items)
-        // console.log(res.data.items)
+        console.log(res.data.items)
       })
       .catch((err) => {
         console.log(err)
       })
-      setSearchTerm("")
+    setSearchTerm("")
   }
 
   return (
@@ -30,7 +30,6 @@ export default function Search() {
         <input type="text" onChange={handleSearchTermChange} /><input type="submit" value="search" />
       </form>
       <div className="book-container">{books.length > 0 && books.map((book) => <Book key={book.etag} {...book} />)}</div>
-      
     </div>
   )
 }
