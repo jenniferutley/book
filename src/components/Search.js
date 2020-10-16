@@ -1,7 +1,7 @@
 import React from 'react'
-import axios from "axios"
+import { Link } from "react-router-dom"
 
-export default function Search({showHome, setShowHome, searchTerm, setSearchTerm, searchType, setSearchType, books, setBooks}) {
+export default function Search({searchTerm, setSearchTerm, searchType, setSearchType}) {
   const handleSearchTermChange = (e) => {
     setSearchTerm(e.target.value)
   }
@@ -29,28 +29,16 @@ export default function Search({showHome, setShowHome, searchTerm, setSearchTerm
     }
   }
 
-  const handleOnSubmit = (e) => {
-    e.preventDefault()
-    setShowHome(false)
-    if (searchTerm === "") {
-      alert("Please enter a search term.")
-    }
-    else {
-      axios.get("https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + searchType + "&maxResults=12")
-        .then(res => {
-          setBooks(res.data.items)
-          console.log(res.data.items)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-      setSearchTerm("")
-    }
-  }
+  // const handleOnSubmit = (e) => {
+  //   e.preventDefault()
+  //   if (searchTerm === "") {
+  //     alert("Please enter a search term.")
+  //   }      
+  // }
 
   return (
     <div>
-    <form onSubmit={handleOnSubmit}>
+    <form>
           <select name="search-options" id="search-options" onChange={handleSearchTypeChange}>
             <option value="any">any</option>
             <option value="title">title</option>
@@ -58,7 +46,7 @@ export default function Search({showHome, setShowHome, searchTerm, setSearchTerm
             <option value="subject">subject</option>
             <option value="isbn">isbn</option>
           </select>
-          <input type="text" onChange={handleSearchTermChange} value={searchTerm} /><input type="submit" value="search" />
+          <input type="text" onChange={handleSearchTermChange} value={searchTerm} /><Link to={process.env.PUBLIC_URL + '/results'}><input type="submit" value="search" /></Link>
         </form>
     </div>
   )
