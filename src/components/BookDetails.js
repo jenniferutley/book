@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
-import EmbeddedViewer from "./embeddedViewer"
 
 export default function BookDetails() {
   const [details, setDetails] = useState([])
@@ -17,16 +16,6 @@ export default function BookDetails() {
         console.log(err)
       })
   }, [volumeId]) 
-
-
-  // window.google.books.load();
-
-  // function initialize() {
-  //   var viewer = new window.google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-  //   viewer.load('ISBN:0738531367');
-  // }
-
-  // window.google.books.setOnLoadCallback(initialize);
 
   return (
     <div>
@@ -49,8 +38,6 @@ export default function BookDetails() {
           {details.volumeInfo.averageRating ? <p>User Rating: {details.volumeInfo.averageRating}/5 (based on {details.volumeInfo.ratingsCount > 1 ? details.volumeInfo.ratingsCount + " ratings)" : details.volumeInfo.ratingsCount + " rating)"}</p> : ""}
           <p></p>
         </div>}
-
-        <EmbeddedViewer />
     </div>
   )
 }

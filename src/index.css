@@ -1,3 +1,68 @@
+/*--------------------------
+BASIC SETUP
+--------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*--------------------------
+NAV
+--------------------------*/
+
+
+/*--------------------------
+SEARCH
+--------------------------*/
+
+select {
+  height: 100px;
+  padding-top: 5px;
+  font-size: 22px;
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-top-left-radius: 0.15rem;
+  border-bottom-left-radius: 0.15rem;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+}
+
+select:focus,
+input[type="text"]:focus {
+  outline: 0;
+}
+
+input[type="text"] {
+  /* font-family: "Karla"; */
+  height: 100px;
+  font-size: 22px;
+  background: lightblue;
+  border: 1px solid lightblue;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+}
+
+form {
+  display: flex;
+  align-items: flex-end;
+}
+
+input[type="submit"] {
+  /* font-family: "Karla"; */
+  height: 100px;
+  font-size: 22px;
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-top-right-radius: 0.15rem;
+  border-bottom-right-radius: 0.15rem;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+}
+
+
+/*--------------------------
+BOOK
+--------------------------*/
+
 .Book {
   width: 250px;
   margin: 1rem;
@@ -21,3 +86,7 @@
 .category-span {
   display: block;
 }
+
+/*--------------------------
+BOOK DETAILS
+--------------------------*/
