@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 export default function Search({ searchTerm, setSearchTerm, searchType, setSearchType }) {
+  
   const handleSearchTermChange = (e) => {
     setSearchTerm(e.target.value)
   }
