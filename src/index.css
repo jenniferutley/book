@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lustria&display=swap');
 /*--------------------------
 BASIC SETUP
 --------------------------*/
@@ -6,6 +7,16 @@ BASIC SETUP
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  color: #2b2d30;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active, a:visited {
+  color: #2b2d30;
 }
 
 /*--------------------------
@@ -13,73 +24,196 @@ NAV
 --------------------------*/
 
 nav {
-  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, .35);
+  height: 72px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0 2% 0 2%;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  z-index: 1;
+}
+
+.le-catalogue {
+  font-family: "Lustria", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.nav-link {
+  margin-right: 10px;
+  justify-content: flex-end;
+}
+
+.nav-link:hover {
+  color: #AFAC9E;
+  transition: all 1s;
 }
 
 /*--------------------------
 SEARCH
 --------------------------*/
 
-select {
-  height: 100px;
-  padding-top: 5px;
-  font-size: 22px;
-  background: lightblue;
-  border: 1px solid lightblue;
-  border-top-left-radius: 0.15rem;
-  border-bottom-left-radius: 0.15rem;
+select, input[type="text"], button[type="submit"] {
+  height: 50px;
+  font-size: 18px;
+  border-top: 1px solid rgba(0, 0, 0, .35);
+  border-bottom: 1px solid rgba(0, 0, 0, .35);
+  border-left: none;
+  border-right: none;
   padding: 0.75rem 1rem 0.75rem 1rem;
 }
 
-select:focus,
-input[type="text"]:focus {
+select {
+  margin-top: 1px;
+  border-left: 1px solid rgba(0, 0, 0, .35);
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  border-left: 1px solid rgba(0, 0, 0, .35);
+  border-right: 1px solid rgba(0, 0, 0, .35);
+  background-color: #AFAC9E;
+  color: white;
+  cursor: pointer;
+}
+
+ion-icon[name="search-sharp"] {
+  font-size: 24px;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #7E7970;
+  transition: background-color 0.5s;
+}
+
+select:focus, input[type="text"]:focus, button[type="submit"]:focus {
   outline: 0;
 }
 
-input[type="text"] {
-  /* font-family: "Karla"; */
-  height: 100px;
-  font-size: 22px;
-  background: lightblue;
-  border: 1px solid lightblue;
-  padding: 0.75rem 1rem 0.75rem 1rem;
-}
-
-form {
+.search-bar {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
-
-input[type="submit"] {
-  /* font-family: "Karla"; */
-  height: 100px;
-  font-size: 22px;
-  background: lightblue;
-  border: 1px solid lightblue;
-  border-top-right-radius: 0.15rem;
-  border-bottom-right-radius: 0.15rem;
-  padding: 0.75rem 1rem 0.75rem 1rem;
-}
-
 
 /*--------------------------
-BOOK
+HOME
 --------------------------*/
 
-.Book {
-  width: 250px;
-  margin: 1rem;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+.Home {
+  display: flex;
+  margin-top: 72px;
 }
 
-.Book img {
-  max-width: 100%;
+.background-img {
+  width: 50vw;
+}
+
+.right-side {
+  margin-top: 102px;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.Home h1 {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.Home p {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.collections-card {
+  background: white;
+  width: 400px;
+  margin: 1rem 0 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, .35);
+  box-shadow: 8px 8px 0px rgba(175, 172, 158, 1.0);
+}
+
+ion-icon[name="trending-up-sharp"], ion-icon[name="book-sharp"],
+ion-icon[name="chatbubbles-sharp"] {
+  font-size: 32px;
+  color: #AFAC9E;
+  margin-right: 10px;
+}
+
+.collections p {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.collections p:hover {
+  transform: translateY(-5%);
+  transition: transform 0.5s;
+}
+
+/*--------------------------
+RESULTS
+--------------------------*/
+
+.Results {
+  margin-top: 72px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .book-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.book-card {
+  background: white;
+  width: 200px;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, .35);
+  box-shadow: 8px 8px 0px rgba(175, 172, 158, 1.0);
+}
+
+.book-title {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.book-author {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 2.5px;
+}
+
+.book-published {
+  font-size: 12px;
+}
+
+.book-pages {
+  font-size: 12px;
+}
+
+.book-card img {
+  max-width: 100%;
+}
+
+.book-link:hover {
+  transform: translateY(-2.5%);
+  transition: transform 0.5s;
 }
 
 .author-span {
@@ -90,6 +224,58 @@ BOOK
   display: block;
 }
 
+.no-results {
+  margin: 25%;
+  font-size: 26px;
+  font-weight: 300;
+  text-align: center;
+}
+
 /*--------------------------
 BOOK DETAILS
 --------------------------*/
+
+.Book-Details {
+  margin-top: 125px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 125px;
+}
+
+.Book-Details p {
+  line-height: 1.5rem;
+}
+
+.details-container {
+  display: flex;
+}
+
+.inner-details-container {
+  margin-left: 25px;
+}
+
+.details-title {
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.details-subtitle {
+  font-size: 26px;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.details-author {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 1rem;
+}
+
+.details-publication-date {
+  margin-top: 1rem;
+}
+
+.details-description {
+  margin-top: 25px;
+}
