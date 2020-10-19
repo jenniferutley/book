@@ -43,11 +43,13 @@ nav {
   font-family: "Lustria", serif;
   font-size: 30px;
   font-weight: 400;
+  width: 450px;
+  text-align: center;
 }
 
 .nav-link {
-  margin-right: 10px;
-  justify-content: flex-end;
+  width: 450px;
+  text-align: right;
 }
 
 .nav-link:hover {
@@ -100,6 +102,7 @@ select:focus, input[type="text"]:focus, button[type="submit"]:focus {
 .search-bar {
   display: flex;
   align-items: center;
+  width: 450px;
 }
 
 /*--------------------------
@@ -109,7 +112,10 @@ HOME
 .Home {
   display: flex;
   margin-top: 72px;
+  overflow: hidden;
+  height: calc(100vh - 72px);
 }
+
 
 .background-img {
   width: 50vw;
@@ -127,41 +133,51 @@ HOME
   margin-bottom: 5px;
 }
 
-.Home p {
-  font-size: 24px;
+.intro {
+  font-size: 22px;
   font-weight: 300;
+  margin-bottom: 30px;
 }
 
 .collections-card {
   background: white;
   width: 400px;
-  margin: 1rem 0 1rem 0;
+  margin: 1.25rem 0 1rem 0;
   padding: 0.5rem;
   border: 1px solid rgba(0, 0, 0, .35);
   box-shadow: 8px 8px 0px rgba(175, 172, 158, 1.0);
+  cursor: pointer;
 }
 
-ion-icon[name="trending-up-sharp"], ion-icon[name="book-sharp"],
-ion-icon[name="chatbubbles-sharp"] {
+.collections-card:hover {
+  transform: translateY(-5%);
+  transition: transform 0.5s;
+}
+
+
+ion-icon[name="trending-up-sharp"], ion-icon[name="book-sharp"], ion-icon[name="chatbubbles-sharp"], ion-icon[name="trophy-sharp"] {
   font-size: 32px;
   color: #AFAC9E;
   margin-right: 10px;
 }
 
-.collections p {
+.collections-card-title {
   font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
   z-index: 2;
   display: flex;
-  align-items: center;
-  cursor: pointer;
+  align-items: center;  
 }
 
-.collections p:hover {
-  transform: translateY(-5%);
-  transition: transform 0.5s;
+.collections-card-details {
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  margin-left: 42px;
+ 
 }
+
 
 /*--------------------------
 RESULTS
